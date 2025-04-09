@@ -1,0 +1,146 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(17, 14, 84);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-transform: capitalize;
+
+}
+
+
+.ull1 {
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    align-items: center;
+    padding: 9px;
+}
+
+.ull1 li {
+    display: inline-block;
+
+
+
+}
+
+.ull1 li a {
+    text-decoration: none;
+    color: white;
+    margin-right: 27px;
+    font-size: 17px;
+
+
+}
+
+.ull1 h3 {
+    color: rgb(255, 255, 255);
+    font-size: 52px;
+
+}
+
+.h3 span {
+    color: rgb(21, 207, 217);
+}
+
+.navbar button {
+
+    color: white;
+    background-color: rgb(255, 0, 0);
+    font-size: 16px;
+    border: none;
+    border-radius: 7px;
+    padding: 11px;
+    cursor: pointer;
+}
+
+.navbar {
+    background-color: rgb(5, 21, 33);
+    width: 100%;
+}
+
+.liii a:hover {
+    color: green;
+}
+
+.menu {
+    display: flex;
+    width: 50%;
+    justify-content: space-around;
+}
+
+.hhp button:hover {
+    color: black;
+    background-color: #1aff00;
+    transition: all 0.3s;
+}
+
+
+/* main codee */
+
+
+
+.cont {
+    width: 100%;
+    height: 300px;
+    margin-top: 55px;
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+.first1 {
+
+    width: 400px;
+    height: 300px;
+    border: 2px solid rgb(0, 255, 238);
+    border-radius: 33px;
+    text-align: center;
+
+
+
+}
+
+.secont2 {
+    width: 400px;
+    height: 300px;
+    border: 2px solid rgb(0, 255, 238);
+    border-radius: 33px;
+    text-align: center;
+}
+
+.thrid3 {
+    width: 400px;
+    height: 300px;
+    border: 2px solid rgb(0, 255, 238);
+    border-radius: 33px;
+    text-align: center;
+
+}
+
+.hrr:hover {
+    background-color: rgb(87, 22, 22);
+    transition: all 0.5s;
+
+}
+
+.foot {
+
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    height: 63px;
+    bottom: 0px;
+    position: absolute;
+
+}
+
+
+.wer {
+    color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
