@@ -1,0 +1,836 @@
+/* ==========================================================================
+   1. RESET & BASE STYLES
+   ========================================================================== */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #070111, #13041f, #210733);
+    color: white;
+    position: relative;
+    overflow-x: hidden; /* Prevents unwanted horizontal scrolling */
+}
+
+/* ==========================================================================
+   2. BACKGROUND PARTICLES
+   ========================================================================== */
+.particles {
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(#c892ff 1.5px, transparent 1.5px);
+    background-size: 60px 60px;
+    opacity: 0.12;
+    z-index: -1;
+    animation: moveStars 25s linear infinite;
+}
+
+@keyframes moveStars {
+    0% { background-position: 0 0; }
+    100% { background-position: 0 -60px; } /* Seamless infinite loop without jumps */
+}
+
+/* ==========================================================================
+   3. HERO SECTION
+   ========================================================================== */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 120px 10% 60px;
+    position: relative;
+    overflow: hidden;
+    gap: 40px;
+}
+
+/* Top Welcome Banner */
+.welcome-banner {
+    position: absolute;
+    top: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 3;
+    width: 100%;
+    max-width: 600px;
+}
+
+.line-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.line {
+    width: 120px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #c783ff, transparent);
+}
+
+.star {
+    color: #d8a7ff;
+    font-size: 22px;
+    text-shadow: 0 0 12px #b34dff;
+}
+
+.welcome-banner h3 {
+    font-size: 48px; /* Slightly reduced for better default scaling */
+    letter-spacing: 8px;
+    color: #cf9cff;
+    text-shadow: 0 0 18px rgba(180, 90, 255, .7);
+}
+
+.welcome-banner p {
+    margin-top: 8px;
+    font-family: 'Great Vibes', cursive;
+    font-size: 40px;
+    color: #ead0ff;
+    text-shadow: 0 0 14px rgba(190, 120, 255, .6);
+}
+
+/* Hero Left Content */
+.hero-left {
+    max-width: 550px;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 76px;
+    color: white;
+    margin-bottom: 16px;
+}
+
+.hero h2 {
+    font-size: 30px;
+    color: #e2caff;
+    margin-bottom: 18px;
+}
+
+.role {
+    font-size: 18px;
+    color: #ddd;
+    margin-bottom: 35px;
+}
+
+/* Hero Interactive Buttons */
+.buttons a, .project-buttons a {
+    display: inline-block;
+    text-decoration: none;
+    margin-right: 15px;
+    margin-bottom: 15px; /* Wrap protection for mobile */
+    padding: 14px 30px;
+    border-radius: 14px;
+    color: white;
+    font-weight: 600;
+    background: linear-gradient(135deg, #7b3fff, #b04dff, #7b3fff);
+    background-size: 200%;
+    box-shadow: 0 0 18px rgba(160, 90, 255, .45);
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: glowMove 4s linear infinite;
+}
+
+.buttons a:hover, .project-buttons a:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 28px rgba(200, 130, 255, .8);
+}
+
+@keyframes glowMove {
+    0% { background-position: 0%; }
+    100% { background-position: 200%; }
+}
+
+/* Hero Profile Photo Customization */
+.photo-ring {
+    width: 360px;
+    height: 360px;
+    border-radius: 50%;
+    padding: 8px;
+    background: linear-gradient(135deg, #8b4dff, #d59dff);
+    box-shadow: 0 0 35px rgba(170, 90, 255, .55);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    animation: float 4s ease-in-out infinite;
+    flex-shrink: 0;
+}
+
+.photo-ring img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid white;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+}
+
+/* Background Atmospheric Glow Shapes */
+.shape {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(120px);
+    pointer-events: none; /* Anti-interference on clicking content */
+}
+
+.shape1 { width: 280px; height: 280px; background: #8a3dff; top: 8%; left: 8%; opacity: .35; }
+.shape2 { width: 260px; height: 260px; background: #b86bff; bottom: 10%; right: 10%; opacity: .28; }
+.shape3 { width: 180px; height: 180px; background: #d2a3ff; top: 45%; right: 35%; opacity: .22; }
+
+/* ==========================================================================
+   4. ABOUT SECTION
+   ========================================================================== */
+.about {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 100px 10%;
+    gap: 80px;
+    background: linear-gradient(135deg, #0b0416, #170725);
+}
+
+.about-left {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Frame Layout Engine */
+.creative-frame {
+    position: relative;
+    width: 100%;
+    max-width: 440px; /* Enhanced scaling layout constraints */
+    aspect-ratio: 3 / 4;
+    border-radius: 30px;
+    padding: 8px;
+    background: linear-gradient(135deg, #8f52ff, #d39dff);
+    box-shadow: 0 0 35px rgba(170, 90, 255, .35);
+    z-index: 2;
+}
+
+.creative-frame img {
+    width: 100%;
+    height: 100%;
+    border-radius: 28px;
+    object-fit: cover;
+}
+
+/* Decorative Cosmic Orbits */
+.orbit {
+    position: absolute;
+    border-radius: 50%;
+    border: 2px solid rgba(190, 120, 255, .15);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+.orbit1 { width: 115%; height: 115%; }
+.orbit2 { width: 130%; height: 130%; }
+
+.about-right {
+    flex: 1;
+}
+
+.about-tag {
+    color: #c892ff;
+    letter-spacing: 2px;
+    font-size: 18px;
+    margin-bottom: 14px;
+}
+
+.about-right h2 {
+    font-size: 44px;
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+
+.about-right p {
+    font-size: 18px;
+    color: #ddd;
+    line-height: 1.9;
+    margin-bottom: 18px;
+}
+
+/* Counter Metrics Grid */
+.stats {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 50px 10% 90px;
+    background: linear-gradient(135deg, #170725, #12031e);
+}
+
+.stat-card {
+    width: 220px;
+    text-align: center;
+    padding: 30px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, .05);
+    box-shadow: 0 0 20px rgba(160, 90, 255, .25);
+    transition: transform 0.3s;
+}
+
+.stat-card:hover {
+    transform: translateY(-6px);
+}
+
+.stat-card h3 {
+    font-size: 42px;
+    color: #cf9cff;
+}
+
+.stat-card p {
+    color: #eee;
+}
+
+/* ==========================================================================
+   5. SKILLS SECTION
+   ========================================================================== */
+.skills {
+    padding: 100px 10%;
+    background: linear-gradient(135deg, #090214, #150523);
+}
+
+.skills-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.skills-title p {
+    color: #c892ff;
+    letter-spacing: 2px;
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+.skills-title h2 {
+    font-size: 46px;
+    color: white;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+.skill-card {
+    text-align: center;
+    padding: 35px 25px;
+    border-radius: 24px;
+    background: rgba(255, 255, 255, .05);
+    box-shadow: 0 0 20px rgba(160, 90, 255, .18);
+    border: 1px solid rgba(255, 255, 255, .08);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.skill-card:hover {
+    transform: translateY(-12px) scale(1.03);
+    box-shadow: 0 0 35px rgba(190, 120, 255, .5);
+}
+
+.icon {
+    font-size: 42px;
+    margin-bottom: 18px;
+}
+
+.skill-card h3 {
+    color: #e8ccff;
+    font-size: 24px;
+    margin-bottom: 16px;
+}
+
+.skill-card p {
+    color: #ddd;
+    font-size: 17px;
+    line-height: 1.9;
+}
+
+/* ==========================================================================
+   6. PROJECTS SECTION (FIXED IMAGE SIZE)
+   ========================================================================== */
+.projects {
+    padding: 100px 10%;
+    background: linear-gradient(135deg,#0b0315,#14051f);
+}
+
+.projects-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.projects-title p {
+    color: #c892ff;
+    font-size: 18px;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.projects-title h2 {
+    font-size: 46px;
+    color: white;
+}
+
+.projects-grid {
+    display: grid;
+    gap: 40px;
+}
+
+.project-card {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    padding: 40px;
+    border-radius: 24px;
+    background: rgba(255, 255, 255, .04);
+    border: 1px solid rgba(255, 255, 255, .06);
+    box-shadow: 0 0 25px rgba(160, 90, 255, .18);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 35px rgba(190, 120, 255, .4);
+}
+
+/* SCREENSHOT BOX (FIXED) */
+.project-image {
+    width: 320px;       /* Width fix ki */
+    height: 200px;      /* Height fix ki, jo pehle 1px ho rahi thi */
+    border-radius: 18px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, .05);
+    box-shadow: 0 0 20px rgba(160, 90, 255, .18);
+    flex-shrink: 0;     /* Flexbox ko photo squeeze karne se rokega */
+}
+
+/* SCREENSHOT IMAGE STYLING (FIXED) */
+.project-image img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;  /* Photo stretch nahi hogi, perfectly fit hogi */
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.06);
+}
+
+.project-content {
+    flex: 1;
+}
+
+.project-content h3 {
+    color: white;
+    font-size: 30px;
+    margin-bottom: 16px;
+}
+
+.project-content p {
+    color: #ddd;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.tech-tags {
+    margin-bottom: 22px;
+}
+
+.tech-tags span {
+    display: inline-block;
+    margin: 4px;
+    padding: 8px 14px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, .06);
+    color: #e7d2ff;
+    font-size: 14px;
+}
+
+/* ==========================================================================
+   7. EDUCATION & JOURNEY SECTION
+   ========================================================================== */
+.experience {
+    padding: 100px 10%;
+    background: linear-gradient(135deg, #090214, #160525);
+}
+
+.experience-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.experience-title p {
+    color: #c892ff;
+    font-size: 18px;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.experience-title h2 {
+    font-size: 46px;
+    color: white;
+}
+
+.timeline {
+    position: relative;
+    max-width: 850px;
+    margin: auto;
+}
+
+/* Core Node Axis Track */
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 20px;
+    top: 0;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(#8b4dff, #c892ff);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 50px;
+    padding-left: 60px;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: 11px;
+    top: 32px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #c892ff;
+    box-shadow: 0 0 20px rgba(180, 90, 255, .6);
+}
+
+.timeline-card {
+    background: rgba(255, 255, 255, .05);
+    padding: 30px;
+    border-radius: 22px;
+    box-shadow: 0 0 25px rgba(160, 90, 255, .2);
+    border: 1px solid rgba(255, 255, 255, .06);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.timeline-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 35px rgba(190, 120, 255, .4);
+}
+
+.timeline-card h3 {
+    font-size: 26px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.timeline-card h4 {
+    color: #d7b4ff;
+    margin-bottom: 14px;
+    font-weight: 500;
+}
+
+.timeline-card p {
+    color: #ddd;
+    line-height: 1.8;
+}
+
+/* ==========================================================================
+   8. CONTACT & FOOTER SECTIONS
+   ========================================================================== */
+.contact {
+    padding: 100px 10%;
+    text-align: center;
+    background: linear-gradient(135deg, #0b0315, #160523);
+}
+
+.contact-title {
+    margin-bottom: 60px;
+}
+
+.contact-title p {
+    color: #c892ff;
+    letter-spacing: 2px;
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+.contact-title h2 {
+    font-size: 46px;
+    color: white;
+    margin-bottom: 14px;
+}
+
+.contact-title span {
+    color: #ddd;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.contact-card {
+    min-height: 240px;
+    padding: 35px;
+    border-radius: 22px;
+    background: rgba(255, 255, 255, .05);
+    box-shadow: 0 0 20px rgba(160, 90, 255, .22);
+    border: 1px solid rgba(255, 255, 255, .06);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 30px rgba(190, 120, 255, .45);
+}
+
+.contact-icon {
+    font-size: 38px;
+    margin-bottom: 16px;
+}
+
+.contact-card h3 {
+    color: white;
+    margin-bottom: 12px;
+    font-size: 24px;
+}
+
+.contact-card p {
+    color: #ddd;
+    font-size: 16px;
+    line-height: 1.8;
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+.contact-card a {
+    color: #dcb7ff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 18px;
+    transition: color 0.3s;
+    margin-top: 8px;
+}
+
+.contact-card a:hover {
+    color: white;
+}
+
+/* Thank You Box */
+.thank-you {
+    padding: 90px 10%;
+    text-align: center;
+    background: linear-gradient(135deg, #090214, #13041f);
+}
+
+.thank-you h2 {
+    font-size: 46px;
+    color: white;
+    margin-bottom: 24px;
+}
+
+.thank-text {
+    max-width: 850px;
+    margin: auto;
+    color: #ddd;
+    font-size: 18px;
+    line-height: 1.9;
+    margin-bottom: 18px;
+}
+
+.quote-box {
+    max-width: 760px;
+    margin: 28px auto;
+    padding: 28px;
+    border-radius: 22px;
+    background: rgba(255, 255, 255, .05);
+    border: 1px solid rgba(255, 255, 255, .06);
+    box-shadow: 0 0 20px rgba(160, 90, 255, .22);
+    color: #e8ccff;
+    font-size: 22px;
+    line-height: 1.8;
+    font-style: italic;
+}
+
+.footer {
+    text-align: center;
+    padding: 30px;
+    background: #08020f;
+    color: #dcb7ff;
+    font-size: 16px;
+}
+
+/* ==========================================================================
+   9. GLOBAL RESPONSIVE MEDIA QUERIES (Ultra-Responsive Update)
+   ========================================================================== */
+@media(max-width: 1024px) {
+    .hero {
+        padding: 140px 5% 60px;
+    }
+    .about {
+        gap: 40px;
+        padding: 80px 5%;
+    }
+    .about-right h2 {
+        font-size: 36px;
+    }
+}
+
+@media(max-width: 900px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 180px;
+        justify-content: center;
+    }
+
+    .hero-left {
+        max-width: 100%;
+    }
+
+    .hero h1 {
+        font-size: 58px;
+    }
+    
+    .hero h2 {
+        font-size: 26px;
+    }
+
+    .photo-ring {
+        width: 280px;
+        height: 280px;
+        margin-top: 20px;
+    }
+
+    .line {
+        width: 60px;
+    }
+
+    .welcome-banner h3 {
+        font-size: 36px;
+    }
+
+    .welcome-banner p {
+        font-size: 28px;
+    }
+
+    .about {
+        flex-direction: column;
+        text-align: center;
+        padding: 60px 8%;
+    }
+    
+    .about-left {
+        width: 100%;
+    }
+
+    /* Fixed Aspect Ratio Layout Scaling on Small Screens */
+    .creative-frame {
+        max-width: 320px;
+    }
+
+    .orbit1 { width: 112%; height: 112%; }
+    .orbit2 { width: 125%; height: 125%; }
+
+    .about-right h2 {
+        font-size: 32px;
+    }
+
+    .stats {
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 60px;
+    }
+    
+    .stat-card {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .skills-title h2, .projects-title h2, .experience-title h2, .contact-title h2, .thank-you h2 {
+        font-size: 32px;
+    }
+
+    .project-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 25px;
+    }
+
+    .project-image {
+        width: 100%;
+        max-width: 340px;
+        height: 200px;
+    }
+    
+    .project-content h3 {
+        font-size: 24px;
+    }
+
+    .timeline::before {
+        left: 10px;
+    }
+
+    .timeline-item {
+        padding-left: 40px;
+    }
+
+    .timeline-dot {
+        left: 2px;
+        top: 28px;
+    }
+    
+    .timeline-card h3 {
+        font-size: 22px;
+    }
+
+    .quote-box {
+        font-size: 18px;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 46px;
+    }
+    .welcome-banner h3 {
+        font-size: 28px;
+        letter-spacing: 4px;
+    }
+    .welcome-banner p {
+        font-size: 24px;
+    }
+    .line {
+        width: 35px;
+    }
+    .buttons a {
+        width: 100%;
+        margin-right: 0;
+    }
+}
