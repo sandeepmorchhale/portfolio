@@ -19,233 +19,286 @@
         content="Explore the portfolio of Sandeep Morchhale, a full-stack developer specializing in MongoDB, Express, React, and Node.js.">
     <meta property="og:type" content="website">
 
+    <!-- Google Fonts: Space Grotesk (Headings) & Plus Jakarta Sans (Body) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=3">
 </head>
 
 <body>
 
-    <div class="particles"></div>
+    <!-- Interactive Canvas & Glow Background -->
+    <canvas id="bg-canvas"></canvas>
+    <div class="glow-bg-blobs">
+        <div class="blob blob1"></div>
+        <div class="blob blob2"></div>
+        <div class="blob blob3"></div>
+    </div>
+
+    <!-- FLOATING NAVBAR -->
+    <header class="main-header">
+        <div class="header-container">
+            <a href="#hero" class="logo">Sandeep<span>.</span></a>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <nav class="nav-links" id="nav-links">
+                <a href="#hero" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#experience" class="nav-link">Education</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+        </div>
+    </header>
 
     <!-- HERO SECTION -->
-    <section class="hero">
-        <!-- background glow -->
-        <div class="shape shape1"></div>
-        <div class="shape shape2"></div>
-        <div class="shape shape3"></div>
-
-        <!-- welcome -->
-        <div class="welcome-banner">
-            <div class="line-group">
-                <span class="line"></span>
-                <span class="star">✦</span>
-                <h3>WELCOME</h3>
-                <span class="star">✦</span>
-                <span class="line"></span>
+    <section id="hero" class="hero">
+        <div class="hero-container">
+            <!-- welcome -->
+            <div class="welcome-banner">
+                <div class="line-group">
+                    <span class="line"></span>
+                    <span class="star">✦</span>
+                    <h3>WELCOME</h3>
+                    <span class="star">✦</span>
+                    <span class="line"></span>
+                </div>
+                <p>to My Digital Space</p>
             </div>
-            <p>to My Digital Space</p>
-        </div>
 
-        <!-- left -->
-        <div class="hero-left">
-            <h1>Sandeep Morchhale</h1>
-            <h2>Dream • Design • Develop</h2>
-            <p class="role">
-                B.Tech Computer Science & Engineering Student
-            </p>
+            <div class="hero-content">
+                <!-- left -->
+                <div class="hero-left">
+                    <h1>Sandeep Morchhale</h1>
+                    <h2>Dream • Design • Develop</h2>
+                    <p class="role">
+                        B.Tech Computer Science & Engineering Student
+                    </p>
 
-            <div class="buttons">
-                <a href="resume.pdf" target="_blank">Resume</a>
-                <a href="https://github.com/sandeepmorchhale" target="_blank">GitHub</a>
-                <a href="https://www.linkedin.com/in/sandeepmorchhale" target="_blank">LinkedIn</a>
-            </div>
-        </div>
+                    <div class="buttons">
+                        <a href="resume.pdf" target="_blank" class="btn btn-primary">Resume</a>
+                        <a href="https://github.com/sandeepmorchhale" target="_blank" class="btn btn-outline">GitHub</a>
+                        <a href="https://www.linkedin.com/in/sandeepmorchhale" target="_blank" class="btn btn-outline">LinkedIn</a>
+                    </div>
+                </div>
 
-        <!-- right -->
-        <div class="hero-right">
-            <div class="photo-ring">
-                <img src="ProfilePhoto.png" alt="Sandeep Morchhale - MERN Stack Developer">
+                <!-- right -->
+                <div class="hero-right">
+                    <div class="photo-container">
+                        <div class="glowing-ring"></div>
+                        <div class="photo-ring">
+                            <img src="ProfilePhoto.png" alt="Sandeep Morchhale - MERN Stack Developer">
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- ABOUT SECTION -->
-    <section class="about">
-        <!-- left photo -->
-        <div class="about-left">
-            <div class="creative-frame">
-                <!-- Fixed Alt Tag for your own image -->
-                <img src="aboutme.png" alt="Sandeep Morchhale - About Me">
-                <div class="orbit orbit1"></div>
-                <div class="orbit orbit2"></div>
+    <section id="about" class="about">
+        <div class="about-container">
+            <!-- left photo -->
+            <div class="about-left">
+                <div class="creative-frame">
+                    <img src="aboutme.png" alt="Sandeep Morchhale - About Me">
+                    <div class="orbit orbit1"></div>
+                    <div class="orbit orbit2"></div>
+                </div>
             </div>
-        </div>
 
-        <!-- right text -->
-        <div class="about-right">
-            <p class="about-tag">ABOUT ME</p>
-            <h2>
-                Passionate about building scalable web applications through modern tech stacks
-            </h2>
-            <p>
-                I’m Sandeep Morchhale, a MERN Stack Developer with strong expertise in MongoDB, Express.js, React.js,
-                and Node.js.
-            </p>
-            <p>
-                I enjoy transforming complex ideas into full-stack applications through clean architecture, efficient
-                APIs, and continuous learning.
-            </p>
-            <p>
-                My goal is to grow as a software professional while creating seamless, high-performance digital
-                experiences through technology.
-            </p>
+            <!-- right text -->
+            <div class="about-right">
+                <p class="about-tag">ABOUT ME</p>
+                <h2>
+                    Passionate about building scalable web applications through modern tech stacks
+                </h2>
+                <div class="about-paragraphs">
+                    <p>
+                        I’m Sandeep Morchhale, a MERN Stack Developer with strong expertise in MongoDB, Express.js, React.js,
+                        and Node.js.
+                    </p>
+                    <p>
+                        I enjoy transforming complex ideas into full-stack applications through clean architecture, efficient
+                        APIs, and continuous learning.
+                    </p>
+                    <p>
+                        My goal is to grow as a software professional while creating seamless, high-performance digital
+                        experiences through technology.
+                    </p>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- STATS COUNTERS -->
     <section class="stats">
-        <div class="stat-card">
-            <h3 class="count" data-target="2">0</h3>
-            <p>Projects Built</p>
-        </div>
-        <div class="stat-card">
-            <h3 class="count" data-target="1">0</h3>
-            <p>Internships</p>
-        </div>
-        <div class="stat-card">
-            <h3 class="count" data-target="3">0</h3>
-            <p>Certifications</p>
+        <div class="stats-container">
+            <div class="stat-card">
+                <div class="stat-icon">⚡</div>
+                <h3 class="count" data-target="2">0</h3>
+                <p>Projects Built</p>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">🎓</div>
+                <h3 class="count" data-target="1">0</h3>
+                <p>Internships</p>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">🏆</div>
+                <h3 class="count" data-target="3">0</h3>
+                <p>Certifications</p>
+            </div>
         </div>
     </section>
 
     <!-- SKILLS SECTION -->
-    <section class="skills">
-        <div class="skills-title">
-            <p>MY SKILLS</p>
-            <h2>Technologies I Work With</h2>
-        </div>
-
-        <div class="skills-grid">
-            <!-- Frontend -->
-            <div class="skill-card">
-                <div class="icon">💻</div>
-                <h3>Frontend</h3>
-                <p>React.js</p>
-                <p>Redux</p>
-                <p>JavaScript</p>
-                <p>HTML5 & CSS3 (Bootstrap)</p>
+    <section id="skills" class="skills">
+        <div class="skills-container">
+            <div class="skills-title">
+                <p>MY SKILLS</p>
+                <h2>Technologies I Work With</h2>
             </div>
 
-            <!-- Backend -->
-            <div class="skill-card">
-                <div class="icon">⚙️</div>
-                <h3>Backend</h3>
-                <p>Node.js (Runtime)</p>
-                <p>Express.js (Framework)</p>
-                <p>API Design (REST)</p>
-                <p>Middlewares</p>
-            </div>
+            <div class="skills-grid">
+                <!-- Frontend -->
+                <div class="skill-card">
+                    <div class="icon">💻</div>
+                    <h3>Frontend</h3>
+                    <div class="skill-list">
+                        <p>React.js</p>
+                        <p>Redux</p>
+                        <p>JavaScript</p>
+                        <p>HTML5 & CSS3 (Bootstrap)</p>
+                    </div>
+                </div>
 
-            <!-- Database -->
-            <div class="skill-card">
-                <div class="icon">🗄️</div>
-                <h3>Database</h3>
-                <p>MongoDB (Primary)</p>
-                <p>Mongoose (ORM)</p>
-                <p>NoSQL Concepts</p>
-            </div>
+                <!-- Backend -->
+                <div class="skill-card">
+                    <div class="icon">⚙️</div>
+                    <h3>Backend</h3>
+                    <div class="skill-list">
+                        <p>Node.js (Runtime)</p>
+                        <p>Express.js (Framework)</p>
+                        <p>API Design (REST)</p>
+                        <p>Middlewares</p>
+                    </div>
+                </div>
 
-            <!-- Tools -->
-            <div class="skill-card">
-                <div class="icon">🛠️</div>
-                <h3>Tools</h3>
-                <p>Git & GitHub</p>
-                <p>Postman (API Testing)</p>
-                <p>VS Code (Editor)</p>
-            </div>
+                <!-- Database -->
+                <div class="skill-card">
+                    <div class="icon">🗄️</div>
+                    <h3>Database</h3>
+                    <div class="skill-list">
+                        <p>MongoDB (Primary)</p>
+                        <p>Mongoose (ORM)</p>
+                        <p>NoSQL Concepts</p>
+                    </div>
+                </div>
 
-            <!-- UI UX -->
-            <div class="skill-card">
-                <div class="icon">🎨</div>
-                <h3>UI/UX Testing</h3>
-                <p>Web Design Testing</p>
-                <p>User Interface Design (Figma)</p>
-                <p>Integration Testing (Full-stack)</p>
-            </div>
+                <!-- Tools -->
+                <div class="skill-card">
+                    <div class="icon">🛠️</div>
+                    <h3>Tools</h3>
+                    <div class="skill-list">
+                        <p>Git & GitHub</p>
+                        <p>Postman (API Testing)</p>
+                        <p>VS Code (Editor)</p>
+                    </div>
+                </div>
 
-            <!-- DevOps -->
-            <div class="skill-card">
-                <div class="icon">☕</div>
-                <h3>Deployment & DevOps</h3>
-                <p>Deployment (Vercel, Netlify, Render)</p>
-                <p>Basics of Docker (Containers)</p>
+                <!-- UI UX -->
+                <div class="skill-card">
+                    <div class="icon">🎨</div>
+                    <h3>UI/UX Testing</h3>
+                    <div class="skill-list">
+                        <p>Web Design Testing</p>
+                        <p>User Interface Design (Figma)</p>
+                        <p>Integration Testing (Full-stack)</p>
+                    </div>
+                </div>
+
+                <!-- DevOps -->
+                <div class="skill-card">
+                    <div class="icon">☕</div>
+                    <h3>Deployment & DevOps</h3>
+                    <div class="skill-list">
+                        <p>Deployment (Vercel, Netlify, Render)</p>
+                        <p>Basics of Docker (Containers)</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- PROJECTS SECTION -->
-    <section class="projects">
-        <div class="projects-title">
-            <p>MY PROJECTS</p>
-            <h2>Things I’ve Built</h2>
-        </div>
-
-        <div class="projects-grid">
-            <!-- Project 1 -->
-            <div class="project-card">
-                <div class="project-image" style="height: 210px;">
-                    <img src="project1.png" alt="Sanson Mart E-Commerce Project by Sandeep Morchhale">
-                </div>
-                <div class="project-content">
-                    <h3>Sanson Mart (E-Commerce Website)</h3>
-                    <p>
-                        Developed a full-stack e-commerce system featuring secure payment gateways and multi-user login.
-                        Integrated robust database management for real-time inventory tracking and comprehensive order
-                        processing.
-                    </p>
-                    <div class="tech-tags">
-                        <span>HTML5</span>
-                        <span>CSS3</span>
-                        <span>Bootstrap</span>
-                        <span>JavaScript</span>
-                        <span>React</span>
-                        <span>Redux</span>
-                        <span>Node.js</span>
-                        <span>Express</span>
-                        <span>Razorpay</span>
-                        <span>GitHub</span>
-                        <span>Vercel</span>
-                        <span>Render</span>
-                    </div>
-                    <div class="project-buttons">
-                        <a href="https://github.com/sandeepmorchhale" target="_blank">GitHub</a>
-                        <a href="https://sansonmart.vercel.app" target="_blank">Live</a>
-                    </div>
-                </div>
+    <section id="projects" class="projects">
+        <div class="projects-container">
+            <div class="projects-title">
+                <p>MY PROJECTS</p>
+                <h2>Things I’ve Built</h2>
             </div>
 
-            <!-- Project 2 -->
-            <div class="project-card">
-                <div class="project-image" style="height: 200px;">
-                    <img src="project2.png" alt="AI Financial Portfolio Project by Sandeep Morchhale">
-                </div>
-                <div class="project-content">
-                    <h3>Portfolio For HRs</h3>
-                    <p>
-                        Designed AI agents for stock and gold market trend analysis and decision support. Applied
-                        intelligent data-driven logic to generate financial insights and market predictions.
-                    </p>
-                    <div class="tech-tags">
-                        <span>HTML5</span>
-                        <span>CSS3</span>
-                        <span>Google APIs</span>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="project1.png" alt="Sanson Mart E-Commerce Project by Sandeep Morchhale">
                     </div>
-                    <div class="project-buttons">
-                        <a href="https://github.com/sandeepmorchhale" target="_blank">GitHub</a>
-                        <a href="#" target="_blank">Live</a>
+                    <div class="project-content">
+                        <h3>Sanson Mart (E-Commerce Website)</h3>
+                        <p>
+                            Developed a full-stack e-commerce system featuring secure payment gateways and multi-user login.
+                            Integrated robust database management for real-time inventory tracking and comprehensive order
+                            processing.
+                        </p>
+                        <div class="tech-tags">
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>Bootstrap</span>
+                            <span>JavaScript</span>
+                            <span>React</span>
+                            <span>Redux</span>
+                            <span>Node.js</span>
+                            <span>Express</span>
+                            <span>Razorpay</span>
+                            <span>GitHub</span>
+                            <span>Vercel</span>
+                            <span>Render</span>
+                        </div>
+                        <div class="project-buttons">
+                            <a href="https://github.com/sandeepmorchhale" target="_blank" class="btn btn-outline">GitHub</a>
+                            <a href="https://sansonmart.vercel.app" target="_blank" class="btn btn-primary">Live</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="project2.png" alt="AI Financial Portfolio Project by Sandeep Morchhale">
+                    </div>
+                    <div class="project-content">
+                        <h3>Portfolio For HRs</h3>
+                        <p>
+                            Designed AI agents for stock and gold market trend analysis and decision support. Applied
+                            intelligent data-driven logic to generate financial insights and market predictions.
+                        </p>
+                        <div class="tech-tags">
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>Google APIs</span>
+                        </div>
+                        <div class="project-buttons">
+                            <a href="https://github.com/sandeepmorchhale" target="_blank" class="btn btn-outline">GitHub</a>
+                            <a href="#" target="_blank" class="btn btn-primary">Live</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -253,176 +306,193 @@
     </section>
 
     <!-- EDUCATION TIMELINE -->
-    <section class="experience">
-        <div class="experience-title">
-            <p>Education</p>
-            <h2>My Professional Journey</h2>
-        </div>
-
-        <div class="timeline">
-            <!-- B.Tech -->
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-card">
-                    <h3>B.Tech</h3>
-                    <h4>Computer Science & Engineering (Final Year)</h4>
-                    <p>Patel College of Science and Technology, Indore (RGPV)</p>
-                    <p>2023 To 2027</p>
-                </div>
+    <section id="experience" class="experience">
+        <div class="experience-container">
+            <div class="experience-title">
+                <p>Education</p>
+                <h2>My Professional Journey</h2>
             </div>
 
-            <!-- Diploma -->
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-card">
-                    <h3>3 Years Diploma</h3>
-                    <h4>Electronics & Telecommunication Branch (CGPA: 7+)</h4>
-                    <p>Govt. Eklavya Polytechnic College, New Harsud (RGPV)</p>
-                    <p>2020 To 2023</p>
+            <div class="timeline">
+                <div class="timeline-line"></div>
+                <!-- B.Tech -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <h3>B.Tech</h3>
+                        <h4>Computer Science & Engineering (Final Year)</h4>
+                        <p class="institute">Patel College of Science and Technology, Indore (RGPV)</p>
+                        <p class="duration">2023 To 2027</p>
+                    </div>
                 </div>
-            </div>
 
-            <!-- 10th & 12th -->
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-card">
-                    <h3>10th & 12th Academic</h3>
-                    <h4>Passed with 86% and 60%</h4>
-                    <p>Abhinav Public School & Govt. Model School, New Harsud (MP Board)</p>
-                    <p>2018 To 2020</p>
+                <!-- Diploma -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <h3>3 Years Diploma</h3>
+                        <h4>Electronics & Telecommunication Branch (CGPA: 7+)</h4>
+                        <p class="institute">Govt. Eklavya Polytechnic College, New Harsud (RGPV)</p>
+                        <p class="duration">2020 To 2023</p>
+                    </div>
+                </div>
+
+                <!-- 10th & 12th -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <h3>10th & 12th Academic</h3>
+                        <h4>Passed with 86% and 60%</h4>
+                        <p class="institute">Abhinav Public School & Govt. Model School, New Harsud (MP Board)</p>
+                        <p class="duration">2018 To 2020</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- CONTACT SECTION -->
-    <section class="contact">
-        <div class="contact-title">
-            <p>CONTACT</p>
-            <h2>Let’s Connect</h2>
-            <span>I’m always open to learning, collaboration, and new opportunities.</span>
-        </div>
-
-        <div class="contact-grid">
-            <div class="contact-card">
-                <div class="contact-icon">📧</div>
-                <h3>Email</h3>
-                <p>sandeepm77249@gmail.com</p>
+    <section id="contact" class="contact">
+        <div class="contact-container">
+            <div class="contact-title">
+                <p>CONTACT</p>
+                <h2>Let’s Connect</h2>
+                <span>I’m always open to learning, collaboration, and new opportunities.</span>
             </div>
 
-            <div class="contact-card">
-                <div class="contact-icon">📍</div>
-                <h3>Location</h3>
-                <p>Indore, Madhya Pradesh</p>
-            </div>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">📧</div>
+                    <h3>Email</h3>
+                    <p>sandeepm77249@gmail.com</p>
+                </div>
 
-            <div class="contact-card">
-                <div class="contact-icon">🔗</div>
-                <h3>LinkedIn</h3>
-                <a href="https://www.linkedin.com/in/sandeepmorchhale" target="_blank">View Profile</a>
-            </div>
+                <div class="contact-card">
+                    <div class="contact-icon">📍</div>
+                    <h3>Location</h3>
+                    <p>Indore, Madhya Pradesh</p>
+                </div>
 
-            <div class="contact-card">
-                <div class="contact-icon">💻</div>
-                <h3>GitHub</h3>
-                <a href="https://github.com/sandeepmorchhale" target="_blank">Visit GitHub</a>
-            </div>
+                <div class="contact-card">
+                    <div class="contact-icon">🔗</div>
+                    <h3>LinkedIn</h3>
+                    <a href="https://www.linkedin.com/in/sandeepmorchhale" target="_blank">View Profile</a>
+                </div>
 
-            <div class="contact-card">
-                <div class="contact-icon">📷</div>
-                <h3>Instagram</h3>
-                <a href="https://instagram.com/sandeep_morchhale" target="_blank">View Instagram</a>
-            </div>
+                <div class="contact-card">
+                    <div class="contact-icon">💻</div>
+                    <h3>GitHub</h3>
+                    <a href="https://github.com/sandeepmorchhale" target="_blank">Visit GitHub</a>
+                </div>
 
-            <div class="contact-card">
-                <div class="contact-icon">G</div>
-                <h3>Google Search</h3>
-                <a href="https://www.google.com/search?q=sandeep+morchhale" target="_blank">View Google</a>
+                <div class="contact-card">
+                    <div class="contact-icon">📷</div>
+                    <h3>Instagram</h3>
+                    <a href="https://instagram.com/sandeep_morchhale" target="_blank">View Instagram</a>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">🌐</div>
+                    <h3>Google Search</h3>
+                    <a href="https://www.google.com/search?q=sandeep+morchhale" target="_blank">View Google</a>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- THANK YOU SECTION -->
     <section class="thank-you">
-        <h2>Thank You for Visiting</h2>
-        <p class="thank-text">
-            Thank you for taking the time to explore my portfolio. I truly appreciate your visit and interest in my
-            journey, projects, and experiences.
-        </p>
-        <p class="thank-text">
-            I’m always excited to learn, build meaningful solutions, and grow through new opportunities and
-            collaborations.
-        </p>
-        <div class="quote-box">
-            “Success begins with curiosity, grows through consistency, and creates impact through dedication.”
+        <div class="thank-you-container">
+            <h2>Thank You for Visiting</h2>
+            <div class="thank-text-group">
+                <p class="thank-text">
+                    Thank you for taking the time to explore my portfolio. I truly appreciate your visit and interest in my
+                    journey, projects, and experiences.
+                </p>
+                <p class="thank-text">
+                    I’m always excited to learn, build meaningful solutions, and grow through new opportunities and
+                    collaborations.
+                </p>
+            </div>
+            
+            <div class="quote-container">
+                <div class="quote-box">
+                    “Success begins with curiosity, grows through consistency, and creates impact through dedication.”
+                </div>
+                <div class="quote-box">
+                    “Dream with confidence, build with passion, and lead with purpose.”
+                </div>
+            </div>
+
+            <!-- Total Website Visitors counter -->
+            <div class="visitor-counter-box">
+                <h3>Total Website Visiters</h3>
+                <div class="counter-display">
+                    <span class="counter-icon">👁️</span>
+                    <span id="visitor-count" class="counter-number">Loading...</span>
+                </div>
+            </div>
         </div>
-        <div class="quote-box">
-            “Dream with confidence, build with passion, and lead with purpose.”
-        </div>
-
-
-        <!-- /////////////////////////////////////// -->
-
-
-        <div class="quote-box">
-
-            <h3 style="margin-bottom: 22px;">Total Website Visiters</h3>
-            <!-- hitwebcounter Code START -->
-<a target="_blank" rel="noopener" title="Check How Many Characters">
-<img src="https://www.hitwebcounter.com/counter/counter.php?page=21501151&amp;style=0006&amp;nbdigits=1&amp;type=page" alt="Check How Many Characters" decoding="async" style="border:0;max-width:100%;height:46px;" />
-</a>
-<br />
-
-<!-- hitwebcounter Code END -->
-
-        </div>
-
-        <!-- ///////////////////////////////////// -->
-
     </section>
 
     <!-- FOOTER -->
     <footer class="footer">
         <p>Sandeep Morchhale ✨ Dream • Design • Develop</p>
-
-
     </footer>
 
     <!-- SCRIPTS -->
     <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="script.js?v=3"></script>
     <script>
-        /* counter */
-        const counters = document.querySelectorAll('.count');
-        counters.forEach(counter => {
-            let update = () => {
-                const target = +counter.getAttribute('data-target');
-                const c = +counter.innerText;
-                if (c < target) {
-                    counter.innerText = c + 1;
-                    setTimeout(update, 200);
-                }
-            };
-            update();
-        });
+        // Fetch dynamic visitor count from CounterAPI with Timeout & Fallback
+        const countElem = document.getElementById('visitor-count');
+        if (countElem) {
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), 2000); // 2 seconds timeout
 
-        /* scroll reveal */
+            fetch('https://api.counterapi.dev/v1/sandeepmorchhale/portfolio_hits/up', { signal: controller.signal })
+                .then(response => {
+                    clearTimeout(timeoutId);
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    if (data && typeof data.value !== 'undefined') {
+                        countElem.innerText = parseInt(data.value).toLocaleString();
+                    } else {
+                        throw new Error('Invalid data format');
+                    }
+                })
+                .catch(err => {
+                    clearTimeout(timeoutId);
+                    console.log('CounterAPI offline, rate-limited, or blocked. Loading fallback.', err);
+                    
+                    // Safe Local Fallback
+                    let localCount = localStorage.getItem('portfolio_hits_count');
+                    if (!localCount) {
+                        localCount = 1;
+                    } else {
+                        localCount = parseInt(localCount) + 1;
+                    }
+                    localStorage.setItem('portfolio_hits_count', localCount);
+                    countElem.innerText = localCount.toLocaleString();
+                });
+        }
+
+        // Initialize ScrollReveal
         ScrollReveal().reveal(
-            '.about, .skills, .projects, .experience, .contact, .thank-you',
+            '.about-container, .skills-container, .projects-container, .experience-container, .contact-container, .thank-you-container',
             {
-                distance: '60px',
-                duration: 1200,
-                easing: 'ease',
+                distance: '40px',
+                duration: 1000,
+                easing: 'cubic-bezier(0.215, 0.610, 0.355, 1)',
                 origin: 'bottom',
-                interval: 150
+                interval: 80,
+                cleanup: true
             }
         );
-    </script>
-    <script>
-        fetch('https://api.countapi.xyz/hit/YOUR-WEBSITE-NAME/unique-key')
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById('visitor-count').innerText = data.value;
-            });
     </script>
 
 </body>
