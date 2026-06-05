@@ -40,7 +40,7 @@
     <!-- FLOATING NAVBAR -->
     <header class="main-header">
         <div class="header-container">
-            <a href="#hero" class="logo">Sandeep<span>.</span></a>
+            <a href="#hero" class="logo">Sandeep<span>.m</span></a>
             <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -60,31 +60,32 @@
     <!-- HERO SECTION -->
     <section id="hero" class="hero">
         <div class="hero-container">
-            <!-- welcome -->
-            <div class="welcome-banner">
-                <div class="line-group">
-                    <span class="line"></span>
-                    <span class="star">✦</span>
-                    <h3>WELCOME</h3>
-                    <span class="star">✦</span>
-                    <span class="line"></span>
-                </div>
-                <p>to My Digital Space</p>
-            </div>
-
             <div class="hero-content">
                 <!-- left -->
                 <div class="hero-left">
-                    <h1>Sandeep Morchhale</h1>
-                    <h2>Dream • Design • Develop</h2>
-                    <p class="role">
-                        B.Tech Computer Science & Engineering Student
+                    <!-- Open for Opportunities Badge -->
+                    <div class="opportunities-badge">
+                        <span class="badge-dot"></span>
+                        <span class="badge-text">Open for Opportunities</span>
+                    </div>
+
+                    <h1 class="hero-title">
+                        Hi, I'm <span class="text-purple">Sandeep</span>
+                        <span class="text-cyan">Morchhale</span>
+                    </h1>
+
+                    <h2 class="hero-subtitle">
+                        I am a <span class="typed-text"></span><span class="cursor">|</span>
+                    </h2>
+
+                    <p class="hero-desc">
+                        Passionate about crafting scalable, high-performance web applications using MongoDB, Express.js, React, and Node.js. Pursuing computer science at Patel College, Indore, with a focus on combining clean architectures and intelligence.
                     </p>
 
                     <div class="buttons">
-                        <a href="resume.pdf" target="_blank" class="btn btn-primary">Resume</a>
-                        <a href="https://github.com/sandeepmorchhale" target="_blank" class="btn btn-outline">GitHub</a>
-                        <a href="https://www.linkedin.com/in/sandeepmorchhale" target="_blank" class="btn btn-outline">LinkedIn</a>
+                        <a href="#contact" class="btn btn-primary btn-get-in-touch">Get In Touch <span class="arrow">&rarr;</span></a>
+                        <a href="#projects" class="btn btn-outline btn-view-work"><span class="dot">&bull;</span> View My Work</a>
+                        <a href="resume.pdf" target="_blank" class="btn btn-outline btn-resume"><span class="icon">📄</span> Resume</a>
                     </div>
                 </div>
 
@@ -98,8 +99,15 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+
+            <!-- Scroll Down Indicator -->
+            <div class="scroll-down">
+                <a href="#about" aria-label="Scroll down">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </a>
+            </div>
 
     <!-- ABOUT SECTION -->
     <section id="about" class="about">

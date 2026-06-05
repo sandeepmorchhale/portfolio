@@ -288,3 +288,56 @@ if (skillBars.length > 0) {
 
     skillBars.forEach(bar => skillObserver.observe(bar));
 }
+
+// ==========================================================================
+// 5. HERO TYPING ANIMATION (Typewriter Effect)
+// ==========================================================================
+const typedTextSpan = document.querySelector(".typed-text");
+const cursorSpan = document.querySelector(".cursor");
+
+const textArray = ["B.Tech", "MERN Stack Developer", "Full Stack Developer", "Software Engineer"];
+const typingDelay = 120;
+const erasingDelay = 60;
+const newTextDelay = 2000; // Delay between current and next text
+let textArrayIndex = 0;
+let charIndex = 0;
+
+function type() {
+    if (typedTextSpan) {
+        if (charIndex < textArray[textArrayIndex].length) {
+            if (cursorSpan && !cursorSpan.classList.contains("typing")) {
+                cursorSpan.classList.add("typing");
+            }
+            typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
+            charIndex++;
+            setTimeout(type, typingDelay);
+        } else {
+            if (cursorSpan) cursorSpan.classList.remove("typing");
+            setTimeout(erase, newTextDelay);
+        }
+    }
+}
+
+function erase() {
+    if (typedTextSpan) {
+        if (charIndex > 0) {
+            if (cursorSpan && !cursorSpan.classList.contains("typing")) {
+                cursorSpan.classList.add("typing");
+            }
+            typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex - 1);
+            charIndex--;
+            setTimeout(erase, erasingDelay);
+        } else {
+            if (cursorSpan) cursorSpan.classList.remove("typing");
+            textArrayIndex++;
+            if (textArrayIndex >= textArray.length) textArrayIndex = 0;
+            setTimeout(type, typingDelay + 400);
+        }
+    }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    if (typedTextSpan && textArray.length) {
+        setTimeout(type, 1000);
+    }
+});
