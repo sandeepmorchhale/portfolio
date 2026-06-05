@@ -295,7 +295,7 @@ if (skillBars.length > 0) {
 const typedTextSpan = document.querySelector(".typed-text");
 const cursorSpan = document.querySelector(".cursor");
 
-const textArray = ["B.Tech", "MERN Stack Developer", "Full Stack Developer", "Software Engineer"];
+const textArray = ["B.Tech Student", "Mern Stack Developer", "Full Stack Developer", "Software Engineer"];
 const typingDelay = 120;
 const erasingDelay = 60;
 const newTextDelay = 2000; // Delay between current and next text
